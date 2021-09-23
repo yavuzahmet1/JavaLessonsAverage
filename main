@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int fizik, matematik, turkce, beden, programlama, counter = 0, total = 0;
+
+        System.out.print("Matematik ders notunu giriniz\t: ");
+        matematik = scanner.nextInt();
+        System.out.print("Fizik ders notunu giriniz\t: ");
+        fizik = scanner.nextInt();
+        System.out.print("Beden ders notunu giriniz\t: ");
+        beden = scanner.nextInt();
+        System.out.print("Türkçe ders notunu giriniz\t: ");
+        turkce = scanner.nextInt();
+        System.out.print("Programlama ders notunu giriniz\t: ");
+        programlama = scanner.nextInt();
+
+        int[] list = new int[]{matematik, fizik, turkce, beden, programlama};
+        for (int lists : list) {//girilen ders notları listeye alındı
+            if (lists > 0 && lists < 100) {//0 ile 100 arasında olan tersler tespit edildi
+                total += lists;//0-100 arasındaki derslerin toplamı alındı
+                counter++;//0-100 arasındaki derslerin sayı olarak tespiti yapıldı
+            }
+        }
+        System.out.println(counter + " Adet ders 0 ile 100 arasında");
+        double average = total / counter;
+        System.out.println("O ile 100 arasında girilen derslerin ortalaması\t: " + average);
+        System.out.println(average > 55 ? "Geçtiniz" : "Kaldınız");
+    }
+}
